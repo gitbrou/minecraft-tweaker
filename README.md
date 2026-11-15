@@ -1,7 +1,8 @@
 <h1 align="center">Minecraft Tweaker</h1>
-Simple Minecraft tweakeк
-loadsagent into jvm
-
+<p align="center">
+  simple Minecraft tweaker<br>
+  loadsagent into jvm
+</p>
 <h2 align="center"><a href="INSTRUCTION.md">HOW TO USE</a></h2>
 
 <p align="center">
