@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minecraft-tweaks"
+version = "0.3.0"
+description = "simple minecraft injector"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "gitbrou" }]
+keywords = ["minecraft", "overlay", "esp", "gui", "win32", "cheat"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/minecraft-tweaks/"
+
+[tool.setuptools]
+packages = ["minecraft_tweaks"]
+
+[tool.setuptools.package-data]
+minecraft_tweaks = ["py.typed"]

@@ -1,0 +1,14 @@
+# сборка и артефакты
+dist/
+dist_pypi/
+build/
+*.egg-info/
+minecraft_tweaks-0.*/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# локальные скрипты сборки
+tools/oneoff/
