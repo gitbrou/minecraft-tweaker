@@ -1,3 +1,66 @@
+# Instructions (English)
+
+## Install
+
+```
+pip install minecraft-tweaks
+```
+
+Python 3.10 or newer, no dependencies.
+
+## Run
+
+```
+python -m minecraft_tweaks
+```
+
+The process waits for the Minecraft window, shows the ESP overlay and the
+ClickGUI, and waits again when the game closes. `Right Shift` toggles the GUI,
+`Shift + Esc` quits, `Alt + S, R, R` arms the client.
+
+Flags: `--fps`, `--no-esp`, `--no-gui`, `--no-arm`, `--world`, `--once`, `-q`.
+
+## Build a single file
+
+```
+python build-all.py
+```
+
+Produces `dist\<name>.pyz` and `dist\<name>.bat` with a randomized process
+name. Options: `--name`, `--exe`, `--keep-old`.
+
+## Autostart
+
+```
+python -m minecraft_tweaks --autostart on|off|status
+```
+
+## Extensions
+
+```
+import minecraft_tweaks as mt
+
+@mt.esp_block("diamond_ore", color=0xFF4ADEDE, max_distance=48)
+def ores(): ...
+```
+
+Decorators: `esp_block`, `esp_entity`, `esp_draw`, `on_frame`, `module`.
+Scripts in `scripts/` load through `mt.load_scripts("scripts")`.
+
+## Java agent
+
+```
+mt.agent.attach()
+mt.agent.read_state()
+```
+
+Needs the `mc-inject` folder next to the package.
+
+## Limits
+
+Windows and Linux with X11. Wayland is not supported. Transparency on Linux
+needs a running compositor.
+
 # Инструкция
 
 ## Установка
@@ -78,66 +141,3 @@ Linux нужен композитор. После установки из pip и
 кроме случая с `mt.agent`.
 
 ---
-
-# Instructions (English)
-
-## Install
-
-```
-pip install minecraft-tweaks
-```
-
-Python 3.10 or newer, no dependencies.
-
-## Run
-
-```
-python -m minecraft_tweaks
-```
-
-The process waits for the Minecraft window, shows the ESP overlay and the
-ClickGUI, and waits again when the game closes. `Right Shift` toggles the GUI,
-`Shift + Esc` quits, `Alt + S, R, R` arms the client.
-
-Flags: `--fps`, `--no-esp`, `--no-gui`, `--no-arm`, `--world`, `--once`, `-q`.
-
-## Build a single file
-
-```
-python build-all.py
-```
-
-Produces `dist\<name>.pyz` and `dist\<name>.bat` with a randomized process
-name. Options: `--name`, `--exe`, `--keep-old`.
-
-## Autostart
-
-```
-python -m minecraft_tweaks --autostart on|off|status
-```
-
-## Extensions
-
-```
-import minecraft_tweaks as mt
-
-@mt.esp_block("diamond_ore", color=0xFF4ADEDE, max_distance=48)
-def ores(): ...
-```
-
-Decorators: `esp_block`, `esp_entity`, `esp_draw`, `on_frame`, `module`.
-Scripts in `scripts/` load through `mt.load_scripts("scripts")`.
-
-## Java agent
-
-```
-mt.agent.attach()
-mt.agent.read_state()
-```
-
-Needs the `mc-inject` folder next to the package.
-
-## Limits
-
-Windows and Linux with X11. Wayland is not supported. Transparency on Linux
-needs a running compositor.
