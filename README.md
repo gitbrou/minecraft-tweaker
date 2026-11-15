@@ -1,2 +1,1 @@
-# minecraft-tweaker
-simple minecraft injector
+! minecraft tweaks
